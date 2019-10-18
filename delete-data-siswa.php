@@ -1,9 +1,9 @@
 <?php
-$Open = mysqli_connect("localhost","root","");
+$Open = mysqli_connect("localhost:3306","root","");
 	if (!$Open){
 	die ("Koneksi ke Engine MySQL Gagal !<br>");
 		}
-$Koneksi = mysqli_select_db("mahasiswa");
+$Koneksi = mysqli_select_db($Open,"mahasiswa");
 	if (!$Koneksi){
 	die ("Koneksi ke Database Gagal !");
 	}
@@ -11,7 +11,7 @@ $Koneksi = mysqli_select_db("mahasiswa");
 if (isset($_GET['nim'])) {
 	$nim = $_GET['nim'];
 	$query   = "SELECT * FROM data_siswa WHERE nim='$nim'";
-	$hasil   = mysqli_query($query);
+	$hasil   = mysqli_query($Open,$query);
 	$data    = mysqli_fetch_array($hasil);
 	}
 	else {
@@ -20,7 +20,7 @@ if (isset($_GET['nim'])) {
 	//proses delete data
 	if (!empty($nim) && $nim != "") {
 		$hapus = "DELETE FROM data_siswa WHERE nim='$nim'";
-		$sql = mysqli_query ($hapus);
+		$sql = mysqli_query ($Open,$hapus);
 		if ($sql) {		
 			?>
 				<script language="JavaScript">

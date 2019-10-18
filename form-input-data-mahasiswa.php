@@ -1,6 +1,6 @@
 <div style="border:1px solid rgb(238,238,238); padding:10px; overflow:auto; width:1114px; height:377px;">
 	<?php //fungsi kode otomatis
-		$host = "localhost";
+		$host = "localhost:3306";
 		$username = "root";
 		$password = "";
 		$db = "mahasiswa";
@@ -27,6 +27,13 @@
 
 		return 1233233;
 		}
+
+
+		function RandomString()
+		{
+			$ID = "RPM".rand(0,1000);
+			return $ID;
+		}
 		$min_tanggal=mysqli_fetch_array(mysqli_query($ichsanasu,"select min(tgl_lahir) as min_tanggal from data_siswa"));
 		$max_tanggal=mysqli_fetch_array(mysqli_query($ichsanasu,"select max(tgl_lahir) as max_tanggal from data_siswa"));
 	?>
@@ -45,7 +52,7 @@
 			<tr>
 				<td height="36">&nbsp;</td>
 				<td>NIM</td>
-				<td><input name="nim" type="text" id="nim" size="15" value=""/></td>
+				<td><input name="nim" type="text" id="nim" size="15" value="<?=RandomString()?>"/></td>
 			</tr>
 			<tr>
 				<td height="36">&nbsp;</td>

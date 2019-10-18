@@ -8,8 +8,18 @@
 	<th width="60">Mata Kuliah</td>&nbsp;      
 	<th width="60">Nilai </td>&nbsp;    
 </tr>
+
+
 <?php
-	$Open = mysqli_connect("localhost","root","");
+
+	$NIM_DATA = 0;
+	if($nim = $_GET['nim'] != null){
+		$NIM_DATA = $_GET['nim'];
+	}else{
+		$NIM_DATA = $_SESSION["username"];
+	}
+
+	$Open = mysqli_connect("localhost:3306","root","");
 		if (!$Open){
 		die ("Koneksi ke Engine MySQL Gagal !<br>");
 		}
@@ -19,7 +29,7 @@
 		}
 
 	$Cari="SELECT * FROM nilai INNER JOIN data_siswa ON nilai.nim_siswa=data_siswa.nim WHERE nim_siswa =  
-	'" .$_SESSION["username"]."'";
+	'" .$NIM_DATA."'";
 	$Tampil = mysqli_query($Open,$Cari);
 	$nomer=0;
     while (	$hasil = mysqli_fetch_array($Tampil)) {

@@ -61,8 +61,8 @@ a:hover {
 	<td width="10" bgcolor="#7FFF00">&nbsp;</td>
 	<td width="140" height="120" bgcolor="#7FFF00"><div align="center"><img src="image/logo.png" width="100" height="90"></div></td>
 	<td width="10" bgcolor="#7FFF00">&nbsp;</td>
-	<td width="1136" bgcolor="#7FFF00"><div align="center"><span class="header">APLIKASI DATA BUKU INDUK SISWA<br><br></span>
-	<b>University of</b><span class="header"><br></span></div></td>
+	<td width="1136" bgcolor="#7FFF00"><div align="center"><span class="header">SIAKAD TERBAGUS<br><br></span>
+	<b>University of AshiDICKy</b><span class="header"><br></span></div></td>
 	<td width="10" bgcolor="#7FFF00"></td>
 </tr>
 <tr bgcolor="#DCDCDC">
@@ -78,8 +78,8 @@ a:hover {
 		<tr>
 		<td valign="top"><ul class="navbar">
 			<li><b>MAIN MENU</b></li><br>
-			<li><a href="home-user.php?page=form-edit-data-siswa&nim=<?=$_SESSION['username']?>" title="edit-data-mahasiswa">&nbsp;Edit Data Anda</a></li>
-			<li><a href="home-user.php?page=lihat-nilai-siswa" title="lihat-data-mahasiswa">&nbsp;Lihat Nilai Data</a></li>
+			<li><a href="home-user.php?page=form-edit-data-siswa&nim=<?=$_SESSION['username']?>" title="edit-data-mahasiswa">&nbsp;Biodata Mahasiswa</a></li>
+			<li><a href="home-user.php?page=lihat-nilai-siswa" title="lihat-data-mahasiswa">&nbsp;Nilai Mahasiswa</a></li>
 		</ul></td>
 		</tr></table></td>
 	<td rowspan="4">&nbsp;</td>
@@ -93,7 +93,7 @@ a:hover {
 				case 'form-lihat-data-mahasiswa' : include "form-lihat-data-mahasiswa.php"; break;
 				case 'form-input-mapel' : include "form-input-mapel.php"; break;
 				case 'form-input-nilai' : include "form-input-nilai.php"; break;
-				case 'form-edit-data-siswa' : include "form-edit-data-siswa.php"; break;
+				case 'form-edit-data-siswa' : include "form-detail-data-mahasiswa.php"; break;
 				case 'form-detail-data-siswa' : include "form-detail-data-siswa.php?nim=".$_SESSION['username']; break;
 				case 'input-data-mahasiswa' : include "input-data-mahasiswa.php"; break;
 				case 'input-mapel' : include "input-mapel.php"; break;

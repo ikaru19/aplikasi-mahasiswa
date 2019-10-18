@@ -61,8 +61,8 @@ a:hover {
 	<td width="10" bgcolor="#7FFF00">&nbsp;</td>
 	<td width="140" height="120" bgcolor="#7FFF00"><div align="center"><img src="image/logo.png" width="100" height="90"></div></td>
 	<td width="10" bgcolor="#7FFF00">&nbsp;</td>
-	<td width="1136" bgcolor="#7FFF00"><div align="center"><span class="header">APLIKASI DATA BUKU INDUK SISWA<br><br></span>
-	<b>University of</b><span class="header"><br></span></div></td>
+	<td width="1136" bgcolor="#7FFF00"><div align="center"><span class="header">SIAKAD TERBAGUS<br><br></span>
+	<b>University of AshiDICKy</b><span class="header"><br></span></div></td>
 	<td width="10" bgcolor="#7FFF00"></td>
 </tr>
 <tr bgcolor="#DCDCDC">
@@ -81,7 +81,9 @@ a:hover {
 			<li><a href="home-admin.php?page=form-input-data-mahasiswa" title="input-data-mahasiswa">&nbsp;Input Siswa</a></li>
 			<li><a href="home-admin.php?page=form-input-mapel" title="input mapel">&nbsp;Input Mapel</a></li>
 			<li><a href="home-admin.php?page=form-input-nilai" title="input nilai">&nbsp;Input Nilai</a></li>
-			<li><a href="home-admin.php?page=form-lihat-data-mahasiswa" title="lihat-data-mahasiswa">&nbsp;View Data</a></li>
+			<li><a href="home-admin.php?page=form-lihat-data-mahasiswa" title="lihat-data-mahasiswa">&nbsp;View Mahasiswa</a></li>
+			<li><a href="home-admin.php?page=form-input-data-dosen" title="input-data-donsen">&nbsp;Input Dosen</a></li>
+			<li><a href="home-admin.php?page=lihat-data-dosen" title="lihat-data-mahasiswa">&nbsp;View Dosen</a></li>
 		</ul></td>
 		</tr></table></td>
 	<td rowspan="4">&nbsp;</td>
@@ -92,15 +94,18 @@ a:hover {
 			$page = (isset($_GET['page']))? $_GET['page'] : "main";
 			switch ($page) {
 				case 'form-input-data-mahasiswa' : include "form-input-data-mahasiswa.php"; break;
+				case 'form-input-data-dosen' : include "form-input-data-dosen.php"; break;
 				case 'form-lihat-data-mahasiswa' : include "form-lihat-data-mahasiswa.php"; break;
 				case 'form-input-mapel' : include "form-input-mapel.php"; break;
 				case 'form-input-nilai' : include "form-input-nilai.php"; break;
 				case 'form-edit-data-siswa' : include "form-edit-data-siswa.php"; break;
-				case 'form-detail-data-siswa' : include "form-detail-data-siswa.php"; break;
+				case 'form-detail-data-siswa' : include "form-detail-data-mahasiswa.php"; break;
 				case 'input-data-mahasiswa' : include "input-data-mahasiswa.php"; break;
+				case 'lihat-data-dosen' : include "lihat-data-dosen.php"; break;
 				case 'input-mapel' : include "input-mapel.php"; break;
 				case 'input-nilai' : include "input-nilai.php"; break;
-				case 'lihat-nilai-siswa' : include "lihat-nilai-siswa.php"; break;
+				case 'input-dosen' : include "input-dosen.php"; break;
+				case 'lihat-nilai-siswa' : include "form-lihat-data-nilai.php"; break;
 				case 'delete-data-siswa' : include "delete-data-siswa.php"; break;
 				case 'main' :
 				default : include 'aboutuser.php';	

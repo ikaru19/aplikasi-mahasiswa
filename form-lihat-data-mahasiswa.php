@@ -11,7 +11,7 @@
 	<th width="130">Action</td>&nbsp;     
 </tr>
 <?php
-	$Open = mysqli_connect("localhost","root","");
+	$Open = mysqli_connect("localhost:3306","root","");
 		if (!$Open){
 		die ("Koneksi ke Engine MySQL Gagal !<br>");
 		}
