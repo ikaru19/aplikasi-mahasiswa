@@ -1,5 +1,7 @@
-<div style="border:1px solid rgb(238,238,238); padding:10px; overflow:auto; width:1114px; height:377px;">
-	<?php //fungsi kode otomatis
+<div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Data Tabel Mahasiswa</h6>
+            </div>	<?php //fungsi kode otomatis
 		include "koneksi.php";
 		$host = "localhost:3306";
 		$username = "root";

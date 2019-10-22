@@ -1,7 +1,12 @@
-<div style="border:1px solid rgb(238,238,238); padding:10px; overflow:auto; width:1114px; height:375px;">
-<h2 align="center"><font color="orange" size="4" face="arial"><b>Data Siswa</b></font></h2><br>
-<table width="1100" border="0" align="center" cellpadding="0" cellspacing="0">
-<tr bgcolor="#FF6600" height="42">
+<div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Data Tabel Mahasiswa</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+<tr>
 	<th width="5">No</td>&nbsp;
 	<th width="60">NIM</td>&nbsp;
 	<th width="160">Nama Siswa</td>&nbsp;
@@ -10,6 +15,10 @@
 	<th width="60">Jurusan</td>&nbsp;
 	<th width="130">Action</td>&nbsp;     
 </tr>
+</thead>
+</div>
+</div>
+
 <?php
 	$Open = mysqli_connect("localhost:3306","root","");
 		if (!$Open){
@@ -31,15 +40,7 @@
 		{
 	$nomer++;
 ?>
-	<tr align="center" bgcolor="#DFE6EF">
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
+	
 	<tr align="center" height="130">
 		<td><?=$nomer?><div align="center"></div></td>
 		<td><?=$nim?><div align="center"></div></td>
@@ -54,15 +55,7 @@
 		<td><?=$jurusan?><div align="center"></div></td>
 		<td bgcolor="#EEF2F7"><div align="center"><a href="home-admin.php?page=lihat-nilai-siswa&nim=<?=$nim?>">Lihat Nilai</a> | <a href="home-admin.php?page=form-detail-data-siswa&nim=<?=$nim?>">Detail</a> | <a href="home-admin.php?page=form-edit-data-siswa&nim=<?=$nim?>">Edit</a> | <a href="home-admin.php?page=delete-data-siswa&nim=<?=$nim?>">Delete</a></div></td>
 	</tr>
-	<tr align="center" bgcolor="#DFE6EF">
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td> 
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
+	
 <?php  
 		}
 	}

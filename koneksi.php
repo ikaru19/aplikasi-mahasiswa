@@ -1,6 +1,6 @@
 <?php
 //buka koneksi ke engine MySQL
-	$Open = mysqli_connect("localhost:3306","root","");
+	$Open = mysqli_connect("localhost","root","");
 		if (!$Open){
 		die ("Koneksi ke Engine MySQL Gagal !<br>");
 		}
