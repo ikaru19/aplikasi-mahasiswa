@@ -219,6 +219,8 @@ if($_SESSION['hak_akses']!="Admin"){
 				case 'input-dosen' : include "input-dosen.php"; break;
 				case 'lihat-nilai-siswa' : include "form-lihat-data-nilai.php"; break;
 				case 'delete-data-siswa' : include "delete-data-siswa.php"; break;
+				case 'delete-data-dosen' : include "delete-data-dosen.php"; break;
+				case 'form-detail-data-dosen' : include "form-detail-data-dosen.php"; break;
 				case 'main' :
 				default : include 'aboutuser.php';	
 			}

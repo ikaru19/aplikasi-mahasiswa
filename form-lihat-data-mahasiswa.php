@@ -53,7 +53,8 @@
 					echo "<img class='shadow' src='foto/$foto' width='110' height='130' title='$nama_siswa' >";
 					?><div align="center"></div></td>
 		<td><?=$jurusan?><div align="center"></div></td>
-		<td bgcolor="#EEF2F7"><div align="center"><a href="home-admin.php?page=lihat-nilai-siswa&nim=<?=$nim?>">Lihat Nilai</a> | <a href="home-admin.php?page=form-detail-data-siswa&nim=<?=$nim?>">Detail</a> | <a href="home-admin.php?page=form-edit-data-siswa&nim=<?=$nim?>">Edit</a> | <a href="home-admin.php?page=delete-data-siswa&nim=<?=$nim?>">Delete</a></div></td>
+		<td bgcolor="#EEF2F7"><div align="center">
+		<a href="home-admin.php?page=lihat-nilai-siswa&nim=<?=$nim?>">Lihat Nilai</a> | <a href="home-admin.php?page=form-detail-data-siswa&nim=<?=$nim?>">Detail</a> | <a href="home-admin.php?page=form-edit-data-siswa&nim=<?=$nim?>">Edit</a> | <a href="home-admin.php?page=delete-data-siswa&nim=<?=$nim?>">Delete</a></div></td>
 	</tr>
 	
 <?php  

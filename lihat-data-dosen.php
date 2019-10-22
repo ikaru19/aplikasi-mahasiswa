@@ -28,7 +28,7 @@
 	$Tampil = mysqli_query($Open,$Cari);
 	$nomer=0;
     while (	$hasil = mysqli_fetch_array ($Tampil)) {
-			$nim 		= stripslashes ($hasil['NIP']);
+			$NIP 		= stripslashes ($hasil['NIP']);
 			$nama_siswa	= stripslashes ($hasil['Nama_dosen']);
 			
 		{
@@ -37,9 +37,10 @@
 	
 	<tr align="center" height="50">
 		<td><?=$nomer?><div align="center"></div></td>
-		<td><?=$nim?><div align="center"></div></td>
+		<td><?=$NIP?><div align="center"></div></td>
 		<td><?=$nama_siswa?><div align="center"></div></td>
-		<td bgcolor="#EEF2F7"><div align="center"><a href="home-admin.php?page=form-detail-data-siswa&nim=<?=$nim?>">Detail</a> | <a href="home-admin.php?page=form-edit-data-siswa&nim=<?=$nim?>">Edit</a> | <a href="home-admin.php?page=delete-data-siswa&nim=<?=$nim?>">Delete</a></div></td>
+		<td bgcolor="#EEF2F7"><div align="center"
+		><a href="home-admin.php?page=form-detail-data-dosen&NIP=<?=$NIP?>">Detail</a> | <a href="home-admin.php?page=form-edit-data-siswa&nim=<?=$nim?>">Edit</a> | <a href="home-admin.php?page=delete-data-dosen&NIP=<?=$NIP?>">Delete</a></div></td>
 	</tr>
 	
 <?php  
