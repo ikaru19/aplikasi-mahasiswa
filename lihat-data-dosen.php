@@ -40,7 +40,7 @@
 		<td><?=$NIP?><div align="center"></div></td>
 		<td><?=$nama_siswa?><div align="center"></div></td>
 		<td bgcolor="#EEF2F7"><div align="center"
-		><a href="home-admin.php?page=form-detail-data-dosen&NIP=<?=$NIP?>">Detail</a> | <a href="home-admin.php?page=form-edit-data-siswa&nim=<?=$nim?>">Edit</a> | <a href="home-admin.php?page=delete-data-dosen&NIP=<?=$NIP?>">Delete</a></div></td>
+		><a href="home-admin.php?page=form-detail-data-dosen&NIP=<?=$NIP?>"class="btn btn-success">Detail</a> | <a href="home-admin.php?page=form-edit-data-siswa&nim=<?=$nim?>"class="btn btn-warning">Edit</a> | <a href="home-admin.php?page=delete-data-dosen&NIP=<?=$NIP?>"class="btn btn-danger">Delete</a></div></td>
 	</tr>
 	
 <?php  

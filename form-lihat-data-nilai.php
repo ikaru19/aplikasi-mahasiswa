@@ -20,7 +20,7 @@
 <?php
 
 	$NIM_DATA = 0;
-	if($nim = $_GET['nim'] != null){
+	if(isset($_GET['nim'])){
 		$NIM_DATA = $_GET['nim'];
 	}else{
 		$NIM_DATA = $_SESSION["username"];

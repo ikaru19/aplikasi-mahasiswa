@@ -37,11 +37,11 @@ if($_SESSION['hak_akses']!="Siswa"){
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home-user.php">
 	<div class="sidebar-brand-icon rotate-n-15">
 	  <i class="fas fa-laugh-wink"></i>
 	</div>
-	<div class="sidebar-brand-text mx-3">SIAKAD TERBAEK <sup>COK</sup></div>
+	<div class="sidebar-brand-text mx-3">SIAKAD TERBAEK <sup>++</sup></div>
   </a>
 
   <!-- Divider -->
@@ -179,7 +179,7 @@ if($_SESSION['hak_akses']!="Siswa"){
   <footer class="sticky-footer bg-white">
 	<div class="container my-auto">
 	  <div class="copyright text-center my-auto">
-		<span>Copyright &copy; Your Website 2019</span>
+		<span>Copyright &copy; University Harvard</span>
 	  </div>
 	</div>
   </footer>
