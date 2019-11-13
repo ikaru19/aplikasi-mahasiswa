@@ -137,7 +137,10 @@ if($_SESSION['hak_akses']!="Siswa"){
 			  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 			  Profile
 			</a>
-			
+			<a class="dropdown-item" href="?page=help-woy">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+				  &nbsp;Help
+                </a>
 			<a class="dropdown-item" href="index.php" 	>
 			  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 			  Logout
@@ -166,7 +169,7 @@ if($_SESSION['hak_akses']!="Siswa"){
 				case 'input-nilai' : include "input-nilai.php"; break;
 				case 'lihat-nilai-siswa' : include "form-lihat-data-nilai.php"; break;
                 case 'delete-data-siswa' : include "delete-data-siswa.php"; break;
-                
+                case 'help-woy' :include "help.php"; break;
 				case 'main' :
 				default : include 'aboutuser.php';	
 			}

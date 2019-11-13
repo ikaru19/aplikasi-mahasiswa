@@ -187,7 +187,10 @@ if($_SESSION['hak_akses']!="Admin"){
 			  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 			  Profile
 			</a>
-			
+			<a class="dropdown-item" href="?page=help-woy">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+				  &nbsp;Help
+                </a>
 			<a class="dropdown-item" href="index.php" 	>
 			  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 			  Logout
@@ -222,6 +225,7 @@ if($_SESSION['hak_akses']!="Admin"){
 				case 'delete-data-siswa' : include "delete-data-siswa.php"; break;
 				case 'delete-data-dosen' : include "delete-data-dosen.php"; break;
 				case 'form-detail-data-dosen' : include "form-detail-data-dosen.php"; break;
+				case 'help-woy': include "help.php"; break;
 				case 'main' :
 				default : include 'aboutuser.php';	
 			}
