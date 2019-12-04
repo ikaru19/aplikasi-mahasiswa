@@ -70,7 +70,6 @@ if($_SESSION['hak_akses']!="Admin"){
 	</a>
 	<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 	  <div class="bg-white py-2 collapse-inner rounded">
-		<h6 class="collapse-header">Custom Components:</h6>
 		<a class="collapse-item" href="home-admin.php?page=form-input-data-mahasiswa">&nbsp;Input Data Mahasiswa</a>
 		<a class="collapse-item" href="home-admin.php?page=form-lihat-data-mahasiswa">&nbsp;Lihat Data Mahasiswa</a>
 	  </div>
@@ -91,28 +90,43 @@ if($_SESSION['hak_akses']!="Admin"){
 	</div>
   </li>
 
+
+   <!-- Nav Item - Pages Collapse Menu -->
+   <li class="nav-item">
+	<a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseTwo">
+	  <i class="fas fa-fw fa-folder"></i>
+	  <span>Mata Kuliah</span>
+	</a>
+	<div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+	  <div class="bg-white py-2 collapse-inner rounded">
+		<a class="collapse-item" href="home-admin.php?page=form-input-mapel">&nbsp;Input Mata Kuliah</a>
+		<a class="collapse-item" href="home-admin.php?page=form-lihat-data-mapel">&nbsp;Lihat Data Mata Kuliah</a>
+	  </div>
+	</div>
+  </li>
+
   <!-- Divider -->
   <hr class="sidebar-divider">
 
   <!-- Heading -->
-  <div class="sidebar-heading">
+  <!-- <div class="sidebar-heading">
 	Input Nilai dan Mapel
-  </div>
+  </div> -->
 
 
   <!-- Nav Item - Charts -->
-  <li class="nav-item">
+  <!-- <li class="nav-item">
 	<a class="nav-link" href="home-admin.php?page=form-input-nilai">
 	  <i class="fas fa-fw fa-chart-area"></i>
 	  <span>&nbsp;Input Nilai</span></a>
-  </li>
+  </li> -->
 
   <!-- Nav Item - Tables -->
-  <li class="nav-item">
+  <!-- <li class="nav-item">
 	<a class="nav-link" href="home-admin.php?page=form-input-mapel">
 	  <i class="fas fa-fw fa-table"></i>
 	  <span>&nbsp;Input Mapel</span></a>
-  </li>
+  </li> -->
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
@@ -140,7 +154,7 @@ if($_SESSION['hak_akses']!="Admin"){
 	  </button>
 
 	  <!-- Topbar Search -->
-	  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+	  <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 		<div class="input-group">
 		  <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
 		  <div class="input-group-append">
@@ -149,7 +163,7 @@ if($_SESSION['hak_akses']!="Admin"){
 			</button>
 		  </div>
 		</div>
-	  </form>
+	  </form> -->
 
 	  <!-- Topbar Navbar -->
 	  <ul class="navbar-nav ml-auto">
@@ -211,20 +225,27 @@ if($_SESSION['hak_akses']!="Admin"){
 				case 'form-input-data-mahasiswa' : include "form-input-data-mahasiswa.php"; break;
 				case 'form-input-data-dosen' : include "form-input-data-dosen.php"; break;
 				case 'form-lihat-data-mahasiswa' : include "form-lihat-data-mahasiswa.php"; break;
+				case 'form-lihat-data-mapel' : include "form-lihat-data-mapel.php"; break;
 				case 'form-input-mapel' : include "form-input-mapel.php"; break;
 				case 'form-input-nilai' : include "form-input-nilai.php"; break;
 				case 'form-edit-data-siswa' : include "form-edit-data-siswa.php"; break;
+				case 'form-edit-data-dosen' : include "form-edit-data-dosen.php"; break;
+				case 'form-edit-data-mapel' : include "form-edit-data-mapel.php"; break;
 				case 'form-detail-data-siswa' : include "form-detail-data-mahasiswa.php"; break;
 				case 'input-data-mahasiswa' : include "input-data-mahasiswa.php"; break;
 				case 'edit-data-mahasiswa' : include "update-mahasiswa.php"; break;
+				case 'edit-data-dosen' : include "update-dosen.php"; break;
+				case 'edit-mapel' : include "update-mapel.php"; break;
 				case 'lihat-data-dosen' : include "lihat-data-dosen.php"; break;
 				case 'input-mapel' : include "input-mapel.php"; break;
 				case 'input-nilai' : include "input-nilai.php"; break;
 				case 'input-dosen' : include "input-dosen.php"; break;
 				case 'lihat-nilai-siswa' : include "form-lihat-data-nilai.php"; break;
 				case 'delete-data-siswa' : include "delete-data-siswa.php"; break;
+				case 'delete-data-mapel' : include "delete-data-mapel.php"; break;
 				case 'delete-data-dosen' : include "delete-data-dosen.php"; break;
 				case 'form-detail-data-dosen' : include "form-detail-data-dosen.php"; break;
+				
 				case 'help-woy': include "help.php"; break;
 				case 'main' :
 				default : include 'aboutuser.php';	
@@ -274,6 +295,7 @@ if($_SESSION['hak_akses']!="Admin"){
 
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="DataTables/jquery.dataTables.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
@@ -288,6 +310,11 @@ if($_SESSION['hak_akses']!="Admin"){
 <!-- Page level custom scripts -->
 <script src="js/demo/chart-area-demo.js"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
+<script>
+	$(document).ready( function () {
+    $('#dataMahasiswa').DataTable();
+} );
+</script>
 
 <!-- <br>
 <table width="1306" border="0" align="center" cellpadding="0" cellspacing="0">

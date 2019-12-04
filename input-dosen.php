@@ -21,7 +21,9 @@ if ($_POST['Submit'] == "Submit") {
 	include "koneksi.php";
 //Masukan data ke Table
 $input	="INSERT INTO dosen(NIP, nama_dosen) VALUES ('$nip','$nama_dosen')";
+$input2	="INSERT INTO login (username, nama , password , hak_akses ) VALUES ('$nip','$nama_dosen','$nip','Dosen')";
 $query_input =mysqli_query($Open,$input);
+$query_input2 =mysqli_query($Open,$input2);
 	if ($query_input) {
 	//Jika Sukses
 ?>

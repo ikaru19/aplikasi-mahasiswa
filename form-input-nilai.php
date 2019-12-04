@@ -17,7 +17,7 @@
 			return $ID;
 		}
 	?>
-	<form action="home-admin.php?page=input-nilai" method="POST" name="form-input-nilai" enctype="multipart/form-data">
+	<form action="home-dosen.php?page=input-nilai" method="POST" name="form-input-nilai" enctype="multipart/form-data">
 		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 			<tr>
 				<td width="5%">&nbsp;</td>
@@ -63,7 +63,7 @@
 				<td><?php
 					mysqli_connect($host,$username,$password) or die("Koneksi gagal");
 					mysqli_select_db($hose,$db) or die("Database tidak bisa dibuka");
-					$result = mysqli_query($hose,"SELECT * FROM mapel");    
+					$result = mysqli_query($hose,"SELECT * FROM mapel where NIP='$_SESSION[username]'");    
 					$jsArray = "var nama_mapel = new Array();\n";    
 					echo '<select name="mapel" onchange="changeValue(this.value)">';    
 					echo '<option> -- Pilih Mapel -- </option>';    

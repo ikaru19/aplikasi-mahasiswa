@@ -32,7 +32,7 @@
                 
             {
 	?>
-	<form action="home-admin.php?page=input-data-dosen" method="POST" name="form-input-data-dosen" enctype="multipart/form-data">
+	<form action="home-admin.php?page=edit-data-dosen" method="POST" name="form-edit-data-dosen" enctype="multipart/form-data">
 		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 			<tr>
 				<td width="5%">&nbsp;</td>
@@ -47,17 +47,17 @@
 			<tr>
 				<td height="36">&nbsp;</td>
 				<td>NIP</td>
-				<td><?=$NIP?></td>
+				<td><input name="nip" type="text" id="nip" size="15" value="<?=$NIP?>"readonly/></td>
 			</tr>
 			<tr>
 				<td height="36">&nbsp;</td>
 				<td>Nama Dosen</td>
-				<td><?=$nama_dosen?></td>
+				<td><input type="text" name="nama_dosen" size="50" value="<?=$nama_dosen?>"/></td>
 			</tr>
 			<tr>
-				<td width="5%">&nbsp;</td>
-				<td width="25%">&nbsp;</td>
-				<td width="70%">&nbsp;</td>
+			<td height="72">&nbsp;</td>
+				<td>&nbsp;</td>
+				<td><input type="submit" name="Submit" value="Submit">
 			</tr>
 		</table>
         <?php  

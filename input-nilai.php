@@ -14,7 +14,7 @@ if ($_POST['Submit'] == "Submit") {
 ?>
 	<script language="JavaScript">
 		alert('Data Harap Dilengkapi');
-		document.location='home-admin.php?page=form-input-nilai';
+		document.location='home-dosen.php?';
 	</script>
 	
 <?php
@@ -30,7 +30,7 @@ if ($_POST['Submit'] == "Submit") {
 		?>
 		<script language="JavaScript">
 		alert('Data Berhasil diinput');
-		document.location='home-admin.php?page=form-input-nilai';
+		document.location='home-dosen.php';
 		</script>
 <?php
 	}

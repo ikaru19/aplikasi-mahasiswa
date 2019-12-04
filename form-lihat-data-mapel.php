@@ -1,16 +1,15 @@
 <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Tabel Mahasiswa</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Tabel Mata Kuliah</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataMahasiswa" width="100%" cellspacing="0">
                   <thead>
 	<th width="5">No</td>&nbsp;
-	<th width="60">NIM Siswa</td>&nbsp;
-	<th width="160">Nama Siswa</td>&nbsp;
-	<th width="60">Mata Kuliah</td>&nbsp;      
-	<th width="60">Nilai </td>&nbsp;    
+	<th width="30%">NIM Siswa</td>&nbsp;
+	<th width="50%">Nama Siswa</td>&nbsp;
+	<th width="30%">Aksi</td>&nbsp;
 	</tr>
 </thead>
 </div>
@@ -35,26 +34,22 @@
 		die ("Koneksi ke Database Gagal !");
 		}
 
-	$Cari="SELECT * FROM nilai INNER JOIN data_siswa ON nilai.nim_siswa=data_siswa.nim WHERE nim_siswa =  
-	'" .$NIM_DATA."'";
+	$Cari="SELECT * FROM mapel";
 	$Tampil = mysqli_query($Open,$Cari);
 	$nomer=0;
     while (	$hasil = mysqli_fetch_array($Tampil)) {
-			$id_nilai		= stripslashes ($hasil['id_nilai']);
-			$nim_siswa	= stripslashes ($hasil['nim_siswa']);
-			$nama =stripslashes ($hasil['nama_siswa']);
-			$mapel			= stripslashes ($hasil['mapel']);
-			$nilai_mapel	= stripslashes ($hasil['nilai_mapel']);
+			$id_mapel = stripslashes ($hasil['id_mapel']);
+			$nama_mapel	= stripslashes ($hasil['nama_mapel']);
+			$nip =stripslashes ($hasil['NIP']);
 		{
 	$nomer++;
 ?>
 
 	<tr align="center" height="130">
 		<td><?=$nomer?><div align="center"></div></td>
-		<td><?=$nim_siswa?><div align="center"></div></td>
-		<td><?=$nama?><div align="center"></div></td>
-		<td><?=$mapel?><div align="center"></div></td>
-		<td><?=$nilai_mapel?><div align="center"></div></td>
+		<td><?=$id_mapel?><div align="center"></div></td>
+		<td><?=$nama_mapel?><div align="center"></div></td>
+		<td> <a href="home-admin.php?page=form-edit-data-mapel&id=<?=$id_mapel?>"class="btn btn-warning">Edit</a> | <a href="home-admin.php?page=delete-data-mapel&id=<?=$id_mapel?>"class="btn btn-danger">Delete</a></div></td></td>
 		</tr>
 	
 <?php  

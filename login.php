@@ -15,7 +15,9 @@ if($op=="in"){
 			if($qry['hak_akses']=="Admin"){
 				header("location:home-admin.php");
 			}else if($qry['hak_akses']=="Siswa")
-			    header("location:home-user.php");
+				header("location:home-user.php");
+			else if($qry['hak_akses']=="Dosen")
+			    header("location:home-dosen.php");	
 		}else{
 			?>
 			<script language="JavaScript">

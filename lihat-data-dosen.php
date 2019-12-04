@@ -1,10 +1,10 @@
 <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data Tabel Mahasiswa</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data Tabel Dosen</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataMahasiswa" width="100%" cellspacing="0">
                   <thead>
 <tr>
 	<th width="5">No</td>&nbsp;
@@ -40,7 +40,7 @@
 		<td><?=$NIP?><div align="center"></div></td>
 		<td><?=$nama_siswa?><div align="center"></div></td>
 		<td bgcolor="#EEF2F7"><div align="center"
-		><a href="home-admin.php?page=form-detail-data-dosen&NIP=<?=$NIP?>"class="btn btn-success">Detail</a> | <a href="home-admin.php?page=form-edit-data-siswa&nim=<?=$nim?>"class="btn btn-warning">Edit</a> | <a href="home-admin.php?page=delete-data-dosen&NIP=<?=$NIP?>"class="btn btn-danger">Delete</a></div></td>
+		><a href="home-admin.php?page=form-detail-data-dosen&NIP=<?=$NIP?>"class="btn btn-success">Detail</a> | <a href="home-admin.php?page=form-edit-data-dosen&NIP=<?=$NIP?>"class="btn btn-warning">Edit</a> | <a href="home-admin.php?page=delete-data-dosen&NIP=<?=$NIP?>"class="btn btn-danger">Delete</a></div></td>
 	</tr>
 	
 <?php  

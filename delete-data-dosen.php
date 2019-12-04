@@ -20,8 +20,10 @@ if (isset($_GET['NIP'])) {
 	//proses delete data
 	if (!empty($nip) && $nip != "") {
 		$hapus = "DELETE FROM dosen WHERE NIP='$nip'";
+		$hapus2 = "DELETE FROM login WHERE username='$nip'";
 		$sql = mysqli_query ($Open,$hapus);
-		if ($sql) {		
+		$sql2 = mysqli_query ($Open,$hapus2);
+		if ($sql && $sql2) {		
 			?>
 				<script language="JavaScript">
 				alert('Data dosen Berhasil dihapus');

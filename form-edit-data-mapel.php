@@ -9,13 +9,18 @@
 		$db = "mahasiswa";
 		$hose = mysqli_connect($host,$username,$password) or die("Koneksi gagal");
 		mysqli_select_db($hose,$db) or die("Database tidak bisa dibuka");
-		function RandomString()
-		{
-			$ID = "MAPEL".rand(0,1000);
-			return $ID;
-		}
+		$Cari="SELECT * FROM mapel WHERE id_mapel ='" .$_GET['id']."'";
+        
+        $Tampil = mysqli_query($Open,$Cari);
+
+      
+        while (	$hasil = mysqli_fetch_array($Tampil)) {
+                $nama_mapel		= stripslashes ($hasil['nama_mapel']);
+                $nama_dosen	= stripslashes ($hasil['NIP']);
+                
+            {
 	?>
-	<form action="home-admin.php?page=input-mapel" method="POST" name="form-input-mapel" enctype="multipart/form-data">
+	<form action="home-admin.php?page=edit-mapel" method="POST" name="form-edit	-mapel" enctype="multipart/form-data">
 		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 			<tr>
 				<td width="5%">&nbsp;</td>
@@ -31,12 +36,12 @@
 			
 				<td height="36">&nbsp;</td>
 				<td>ID</td>
-				<td><input name="id_mapel" type="text" id="id_mapel" size="15" readonly value="<?=RandomString()?>" /></td>
+				<td><input name="id_mapel" type="text" id="id_mapel" size="15" readonly value="<?=$_GET['id']?>" /></td>
 			</tr>
 			<tr>
 				<td height="36">&nbsp;</td>
 				<td>Nama Mata Pelajaran</td>
-				<td><input type="text" name="nama_mapel" size="50" maxlength="30" /></td>
+				<td><input type="text" name="nama_mapel" size="50" maxlength="30" value="<?=$nama_mapel?>"/></td>
 			</tr>
 			<tr>
 				<td height="36">&nbsp;</td>
@@ -46,10 +51,18 @@
 					mysqli_select_db($hose,$db) or die("Database tidak bisa dibuka");
 					$result = mysqli_query($hose,"SELECT * FROM dosen");    
 					$jsArray = "var nama_mapel = new Array();\n";    
-					echo '<select name="guru_mapel" onchange="changeValue(this.value)">';    
-					echo '<option> -- Pilih Dosen -- </option>';    
+					echo '<select name="guru_mapel" onchange="changeValue(this.value)" >';    
 					while ($row = mysqli_fetch_array($result)) {    
-						echo '<option value="' . $row['NIP'] . '">' . $row['Nama_dosen'] .'</option>';
+						if($row['NIP'] == $nama_dosen){
+							echo '<option value="' . $row['NIP'] . '" selected>' . $row['Nama_dosen'] .'</option>';
+
+						}else{
+
+							echo '<option value="' . $row['NIP'] . '">' . $row['Nama_dosen'] .'</option>';
+				
+
+						}		
+
 						}    
 					echo '</select>';
 					?></td>
@@ -66,5 +79,12 @@
 				<td width="70%">&nbsp;</td>
 			</tr>
 		</table>
+
+		<?php  
+		}
+	}
+//Tutup koneksi engine MySQL
+	mysqli_close($Open);
+?>
 	</form>
 </div>
