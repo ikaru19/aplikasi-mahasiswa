@@ -148,7 +148,7 @@ if($_SESSION['hak_akses']!="Dosen"){
 		  </a>
 		  <!-- Dropdown - User Information -->
 		  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-			<a class="dropdown-item" href="home-admin.php">
+			<a class="dropdown-item" href="?page=form-detail-data-dosen&NIP=<?php echo $_SESSION['username'];?>">
 			  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 			  Profile
 			</a>
