@@ -6,7 +6,7 @@ if(!isset($_SESSION['username'])){
 }
 //cek level user
 if($_SESSION['hak_akses']!="Dosen"){
-    die("Anda bukan Admin");//jika bukan admin jangan lanjut
+    die("Anda bukan Dosen");//jika bukan admin jangan lanjut
 }
 ?>
 <html>
@@ -49,7 +49,7 @@ if($_SESSION['hak_akses']!="Dosen"){
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item">
-	<a class="nav-link" href="home-admin.php">
+	<a class="nav-link" href="home-dosen.php">
 	  <i class="fas fa-fw fa-tachometer-alt"></i>
 	  <span>Home</span></a>
   </li>
